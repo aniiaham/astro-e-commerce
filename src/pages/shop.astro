@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/default.astro'
+import ShopItems from '../components/shop-items.astro'
+---
+
+<Layout>
+    <div class="shop">
+        <h1>Shop Sandwich Kits</h1>
+        <noscript>
+            <p>
+                JavaScript is required to purchase things from the sndwch web store.
+            </p>
+        </noscript>
+    </div>
+
+    <div class="products">
+       <ShopItems />
+        <p>TODO: show cart</p>
+
+    </div>
+</Layout>
+
+<style>
+    .shop {
+	padding: 3rem 5%;
+}
+
+.products {
+	align-items: flex-start;
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: 1fr 260px;
+	position: relative;
+}
+</style>
