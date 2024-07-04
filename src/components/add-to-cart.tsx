@@ -1,5 +1,4 @@
 /** @jsxImportSource react */
-"use client";
 
 import { addItemToCart } from "../stores/cart";
 
