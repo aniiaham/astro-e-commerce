@@ -1,6 +1,6 @@
 import { computed, map } from "nanostores";
 
-export const $cart = map<Record<number, CartItem>>({});
+export const $cart = map<Record<number, CartItem | undefined>>({});
 
 export function addItemToCart(item: ShopItem) {
   const cartItem = $cart.get()[item.id];
@@ -21,7 +21,7 @@ export const subtotal = computed($cart, (entries) => {
   let subtotal = 0;
   Object.values(entries).forEach((entry) => {
     if (!entry) {
-      return;
+      return subtotal;
     }
 
     subtotal += entry.quantity * entry.item.price;
