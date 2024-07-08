@@ -1,9 +1,11 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 import react from "@astrojs/react";
 import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), solidJs()]
+  output: "server",
+  site: "https://astro-frontend-masters.netlify.app",
+  integrations: [react(), solidJs()],
 });
